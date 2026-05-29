@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product · Navigator AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Navigator AI</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="why.html">Why</a>
+        <a href="process.html">Process</a>
+        <a href="product.html" class="active">Product</a>
+        <a href="reflection.html">Reflection</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="page">
+      <h2>What Navigator AI is</h2>
+
+      <p class="lede">
+        [300-400 words describing the final product. Three core surfaces:
+        chat, digest, posts archive.]
+      </p>
+
+      <h3>Chat</h3>
+      <p>
+        [Ask anything about your school, get sourced answers in plain English.]
+      </p>
+      <figure>
+        <img src="assets/screenshot-chat.png" alt="Navigator chat interface">
+        <figcaption>The chat interface, with citations linked to source posts</figcaption>
+      </figure>
+
+      <h3>Digest</h3>
+      <p>
+        [A structured view of upcoming events and deadlines.]
+      </p>
+      <figure>
+        <img src="assets/screenshot-digest.png" alt="Navigator digest">
+        <figcaption>The digest shows what's coming up in the next 4 weeks</figcaption>
+      </figure>
+
+      <h3>Posts archive</h3>
+      <p>
+        [Searchable, filterable archive of every ingested message.]
+      </p>
+
+      <h3>Technologies used</h3>
+      <ul>
+        <li><strong>Next.js 15 + TypeScript</strong> — full-stack framework</li>
+        <li><strong>SQLite</strong> — embedded database with per-user data isolation</li>
+        <li><strong>Google Gemini</strong> — language model for chat and entity extraction</li>
+        <li><strong>Gemini text-embedding-004</strong> — vector embeddings for semantic search</li>
+        <li><strong>Gmail API</strong> — ingesting ParentSquare emails</li>
+        <li><strong>Railway</strong> — production hosting</li>
+      </ul>
+
+      <div class="cta-row">
+        <a href="https://navigator-ai-production.up.railway.app/" class="btn">Try Navigator AI</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    </div>
+  </footer>
+</body>
+</html>

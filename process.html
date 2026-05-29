@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process · Navigator AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Navigator AI</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="why.html">Why</a>
+        <a href="process.html" class="active">Process</a>
+        <a href="product.html">Product</a>
+        <a href="reflection.html">Reflection</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="page">
+      <h2>How I built Navigator AI</h2>
+
+      <p class="lede">
+        [400-500 words. Walk through your journey: research, architectural
+        decisions, building, testing, fixing.]
+      </p>
+
+      <h3>Phase 1: Research and design</h3>
+      <p>
+        [What did you read? What did you learn about RAG (retrieval-augmented
+        generation)? What were the key architectural decisions you made early
+        and why?]
+      </p>
+
+      <h3>Phase 2: Building the core pipeline</h3>
+      <p>
+        [Ingestion → embedding → retrieval → generation. Describe each piece
+        briefly. Mention the technologies: Next.js, SQLite, Gemini, Gmail API.]
+      </p>
+
+      <figure>
+        <img src="assets/architecture-diagram.png" alt="Navigator AI architecture diagram">
+        <figcaption>Navigator's four-pipeline architecture</figcaption>
+      </figure>
+
+      <h3>Phase 3: Privacy and isolation</h3>
+      <p>
+        [The hardest engineering challenge — making sure one user's data
+        never leaks into another's. Per-user visibility filtering at the
+        database level. The audit endpoints you built to verify it.]
+      </p>
+
+      <h3>Phase 4: Pilot and iteration</h3>
+      <p>
+        [Inviting Laura Khanna, gathering feedback, iterating on real
+        recency-bias issues and citation problems. Be honest about what
+        didn't work the first time.]
+      </p>
+
+      <h3>Challenges</h3>
+      <p>
+        [Pick 2-3 specific technical or design challenges. Examples:
+        hallucinated future dates on old posts, recurring opportunities
+        being misclassified as one-time events, the answer cache leaking
+        across users.]
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    </div>
+  </footer>
+</body>
+</html>
