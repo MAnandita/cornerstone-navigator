@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reflection · Navigator AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Navigator AI</h1>
-      <nav>
-        <a href="index.html">Home</a>
+  <div class="grid-bg"></div>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-text">Navigator AI</span>
+      </a>
+      <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html" class="active">Reflection</a>
-      </nav>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="container">
-    <article class="page">
-      <h2>Video Reflection</h2>
-      <p class="lede">
-        A 10-15 minute reflection on the Navigator AI project journey.
-      </p>
+  <main class="article-main">
+    <article class="article">
+      <header class="article-header reveal">
+        <div class="article-eyebrow">04 · Reflection</div>
+        <h1>Looking back, looking forward.</h1>
+        <p class="article-lede">A 10–15 minute video reflection on the Navigator AI journey.</p>
+      </header>
 
-      <div class="video-wrapper">
-        <!-- Replace VIDEO_ID with your actual YouTube video ID -->
+      <div class="video-wrapper reveal" style="--delay: 0.1s">
         <iframe
           src="https://www.youtube.com/embed/VIDEO_ID"
           title="Navigator AI Cornerstone Reflection"
@@ -37,23 +45,40 @@
           allowfullscreen></iframe>
       </div>
 
-      <h3>What this video covers</h3>
-      <ul>
-        <li>Why this project is meaningful to me</li>
-        <li>The problem Navigator addresses</li>
-        <li>My methodology and the technical journey</li>
-        <li>The product I created and what I'd improve with more time</li>
-        <li>What I learned about engineering, AI, and shipping real software</li>
-        <li>How Navigator can contribute to the KLS community and beyond</li>
-        <li>Future plans for the project</li>
-      </ul>
+      <section class="article-section reveal" style="--delay: 0.15s">
+        <h2>What the video covers</h2>
+        <ul class="reflection-list">
+          <li>Why this project is meaningful to me</li>
+          <li>The problem Navigator addresses</li>
+          <li>My methodology and the technical journey</li>
+          <li>The product itself and what I would improve with more time</li>
+          <li>What I learned about engineering, AI, and shipping real software</li>
+          <li>How Navigator can contribute to the KLS community and beyond</li>
+          <li>Future plans for the project</li>
+        </ul>
+      </section>
+
+      <nav class="article-nav reveal">
+        <a href="product.html" class="article-nav-link">← Product</a>
+        <a href="index.html" class="article-nav-link article-nav-next">Home →</a>
+      </nav>
     </article>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    <div class="footer-inner">
+      <div>
+        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
+        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+        <a href="assets/proposal.pdf">Original proposal</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,80 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Process · Navigator AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Navigator AI</h1>
-      <nav>
-        <a href="index.html">Home</a>
+  <div class="grid-bg"></div>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-text">Navigator AI</span>
+      </a>
+      <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html" class="active">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html">Reflection</a>
-      </nav>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="container">
-    <article class="page">
-      <h2>How I built Navigator AI</h2>
+  <main class="article-main">
+    <article class="article">
+      <header class="article-header reveal">
+        <div class="article-eyebrow">02 · Process</div>
+        <h1>From a question to a working product.</h1>
+        <p class="article-lede">How I built Navigator AI over a series of late nights and architectural turns.</p>
+      </header>
 
-      <p class="lede">
-        [400-500 words. Walk through your journey: research, architectural
-        decisions, building, testing, fixing.]
-      </p>
+      <section class="article-section reveal" style="--delay: 0.1s">
+        <h2>Phase 01 · Research and design</h2>
+        <p>
+          [WRITE 400-500 WORDS TOTAL ACROSS THIS PAGE]
+        </p>
+        <p>
+          The first weeks were entirely about reading. I dug into how
+          retrieval-augmented generation works, why it matters, and how
+          modern AI applications combine semantic search with structured
+          data. I learned about embeddings, cosine similarity, and the
+          tradeoffs between dense vector search and traditional keyword
+          search.
+        </p>
+      </section>
 
-      <h3>Phase 1: Research and design</h3>
-      <p>
-        [What did you read? What did you learn about RAG (retrieval-augmented
-        generation)? What were the key architectural decisions you made early
-        and why?]
-      </p>
+      <section class="article-section reveal" style="--delay: 0.15s">
+        <h2>Phase 02 · Building the core pipeline</h2>
+        <p>
+          Navigator runs on four parallel pipelines: ingestion, embedding
+          and entity extraction, retrieval and generation, and a maintenance
+          layer that keeps data quality high over time.
+        </p>
+        <div class="code-block">
+          <div class="code-header">Architecture</div>
+          <pre><code>Gmail API → Posts table → Embeddings + Entity Extraction
+                                        ↓
+                              Retrieval (4 signals)
+                                        ↓
+                              Generation (Gemini)
+                                        ↓
+                              Cited answer</code></pre>
+        </div>
+      </section>
 
-      <h3>Phase 2: Building the core pipeline</h3>
-      <p>
-        [Ingestion → embedding → retrieval → generation. Describe each piece
-        briefly. Mention the technologies: Next.js, SQLite, Gemini, Gmail API.]
-      </p>
+      <section class="article-section reveal" style="--delay: 0.2s">
+        <h2>Phase 03 · Privacy and isolation</h2>
+        <p>
+          The hardest engineering problem wasn't the AI. It was making sure
+          one user's data could never leak into another's experience. Every
+          read path — chat retrieval, the posts page, the digest, the
+          suggested questions, even the post count shown in the UI — joins
+          through a per-user visibility table. This is enforced at the
+          database level, not the UI level.
+        </p>
+      </section>
 
-      <figure>
-        <img src="assets/architecture-diagram.png" alt="Navigator AI architecture diagram">
-        <figcaption>Navigator's four-pipeline architecture</figcaption>
-      </figure>
+      <section class="article-section reveal" style="--delay: 0.25s">
+        <h2>Phase 04 · Pilot and iteration</h2>
+        <p>
+          [Talk about Laura, the feedback you got, the bugs you found
+          through real use, the iteration loop.]
+        </p>
+      </section>
 
-      <h3>Phase 3: Privacy and isolation</h3>
-      <p>
-        [The hardest engineering challenge — making sure one user's data
-        never leaks into another's. Per-user visibility filtering at the
-        database level. The audit endpoints you built to verify it.]
-      </p>
+      <section class="article-section reveal" style="--delay: 0.3s">
+        <h2>Challenges</h2>
+        <p>
+          [Two or three specific technical challenges. The recency bias
+          issue. Hallucinated future dates on old posts. The Patch M
+          ordering bug. Be honest about what didn't work the first time.]
+        </p>
+      </section>
 
-      <h3>Phase 4: Pilot and iteration</h3>
-      <p>
-        [Inviting Laura Khanna, gathering feedback, iterating on real
-        recency-bias issues and citation problems. Be honest about what
-        didn't work the first time.]
-      </p>
-
-      <h3>Challenges</h3>
-      <p>
-        [Pick 2-3 specific technical or design challenges. Examples:
-        hallucinated future dates on old posts, recurring opportunities
-        being misclassified as one-time events, the answer cache leaking
-        across users.]
-      </p>
+      <nav class="article-nav reveal">
+        <a href="why.html" class="article-nav-link">← Why</a>
+        <a href="product.html" class="article-nav-link article-nav-next">Product →</a>
+      </nav>
     </article>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    <div class="footer-inner">
+      <div>
+        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
+        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+        <a href="assets/proposal.pdf">Original proposal</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

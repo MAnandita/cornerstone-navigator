@@ -1,77 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product · Navigator AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Navigator AI</h1>
-      <nav>
-        <a href="index.html">Home</a>
+  <div class="grid-bg"></div>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-text">Navigator AI</span>
+      </a>
+      <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html">Process</a>
         <a href="product.html" class="active">Product</a>
         <a href="reflection.html">Reflection</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <article class="page">
-      <h2>What Navigator AI is</h2>
-
-      <p class="lede">
-        [300-400 words describing the final product. Three core surfaces:
-        chat, digest, posts archive.]
-      </p>
-
-      <h3>Chat</h3>
-      <p>
-        [Ask anything about your school, get sourced answers in plain English.]
-      </p>
-      <figure>
-        <img src="assets/screenshot-chat.png" alt="Navigator chat interface">
-        <figcaption>The chat interface, with citations linked to source posts</figcaption>
-      </figure>
-
-      <h3>Digest</h3>
-      <p>
-        [A structured view of upcoming events and deadlines.]
-      </p>
-      <figure>
-        <img src="assets/screenshot-digest.png" alt="Navigator digest">
-        <figcaption>The digest shows what's coming up in the next 4 weeks</figcaption>
-      </figure>
-
-      <h3>Posts archive</h3>
-      <p>
-        [Searchable, filterable archive of every ingested message.]
-      </p>
-
-      <h3>Technologies used</h3>
-      <ul>
-        <li><strong>Next.js 15 + TypeScript</strong> — full-stack framework</li>
-        <li><strong>SQLite</strong> — embedded database with per-user data isolation</li>
-        <li><strong>Google Gemini</strong> — language model for chat and entity extraction</li>
-        <li><strong>Gemini text-embedding-004</strong> — vector embeddings for semantic search</li>
-        <li><strong>Gmail API</strong> — ingesting ParentSquare emails</li>
-        <li><strong>Railway</strong> — production hosting</li>
-      </ul>
-
-      <div class="cta-row">
-        <a href="https://navigator-ai-production.up.railway.app/" class="btn">Try Navigator AI</a>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
       </div>
+    </div>
+  </nav>
+
+  <main class="article-main">
+    <article class="article">
+      <header class="article-header reveal">
+        <div class="article-eyebrow">03 · Product</div>
+        <h1>What Navigator does.</h1>
+        <p class="article-lede">A working private chatbot for school communities, deployed and used at KLS.</p>
+      </header>
+
+      <section class="article-section reveal" style="--delay: 0.1s">
+        <h2>Chat</h2>
+        <p>
+          [WRITE 300-400 WORDS TOTAL]
+        </p>
+        <p>
+          The primary surface. Users ask questions in plain English and
+          receive answers grounded in their own school posts, with citations
+          linked back to the original messages.
+        </p>
+        <figure class="figure">
+          <img src="assets/screenshot-chat.png" alt="Navigator chat interface" />
+          <figcaption>Citations link directly to source posts</figcaption>
+        </figure>
+      </section>
+
+      <section class="article-section reveal" style="--delay: 0.15s">
+        <h2>Digest</h2>
+        <p>
+          A structured view of what's actually upcoming over the next four
+          weeks. Sourced from entity records extracted at ingestion time,
+          filtered for freshness, deduplicated.
+        </p>
+      </section>
+
+      <section class="article-section reveal" style="--delay: 0.2s">
+        <h2>Posts archive</h2>
+        <p>
+          Every ingested message, searchable and filterable. Strict per-user
+          scoping means parents and staff at the same school never see each
+          other's inbox content.
+        </p>
+      </section>
+
+      <section class="article-section reveal" style="--delay: 0.25s">
+        <h2>Technology stack</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-label">Frontend & API</div>
+            <div class="tech-name">Next.js 15</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Language</div>
+            <div class="tech-name">TypeScript</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Database</div>
+            <div class="tech-name">SQLite</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">LLM</div>
+            <div class="tech-name">Google Gemini</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Embeddings</div>
+            <div class="tech-name">text-embedding-004</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Ingestion</div>
+            <div class="tech-name">Gmail API</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Hosting</div>
+            <div class="tech-name">Railway</div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-label">Source control</div>
+            <div class="tech-name">GitHub</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta-block reveal" style="--delay: 0.3s">
+        <h3>Try Navigator yourself.</h3>
+        <p>The live version is running for the KLS community right now.</p>
+        <a href="https://navigator-ai-production.up.railway.app/" class="btn-primary" target="_blank" rel="noopener">
+          Open the app
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <nav class="article-nav reveal">
+        <a href="process.html" class="article-nav-link">← Process</a>
+        <a href="reflection.html" class="article-nav-link article-nav-next">Reflection →</a>
+      </nav>
     </article>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    <div class="footer-inner">
+      <div>
+        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
+        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+        <a href="assets/proposal.pdf">Original proposal</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

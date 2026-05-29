@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why · Navigator AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Navigator AI</h1>
-      <nav>
-        <a href="index.html">Home</a>
+  <div class="grid-bg"></div>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-text">Navigator AI</span>
+      </a>
+      <div class="topnav-links">
         <a href="why.html" class="active">Why</a>
         <a href="process.html">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html">Reflection</a>
-      </nav>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="container">
-    <article class="page">
-      <h2>Why I built Navigator AI</h2>
+  <main class="article-main">
+    <article class="article">
+      <header class="article-header reveal">
+        <div class="article-eyebrow">01 · Why</div>
+        <h1>The problem with how schools communicate.</h1>
+        <p class="article-lede">Why I built Navigator AI, and why it matters.</p>
+      </header>
 
-      <div class="callout">
-        <p class="callout-label">Driving question</p>
+      <div class="callout reveal" style="--delay: 0.1s">
+        <div class="callout-label">Driving question</div>
         <p class="callout-text">
           Can a school-specific AI assistant make families' lives meaningfully
           easier by turning unstructured school communications into clear,
@@ -33,30 +45,60 @@
         </p>
       </div>
 
-      <h3>The problem</h3>
-      <p>
-        [300-400 word section here. Write about:]
-      </p>
-      <ul>
-        <li>The volume of school communications parents and students face today</li>
-        <li>How existing tools (email inbox, ParentSquare, Canvas) don't synthesize across sources</li>
-        <li>How AI changes what's possible — but only if it's grounded in real data</li>
-        <li>Your personal connection — what made YOU want to build this specifically</li>
-      </ul>
+      <section class="article-section reveal" style="--delay: 0.15s">
+        <h2>The problem</h2>
+        <p>
+          [WRITE 300-400 WORDS TOTAL ACROSS THIS PAGE]
+        </p>
+        <p>
+          Modern schools communicate with families through an ever-growing
+          number of channels: ParentSquare announcements, weekly newsletters,
+          Canvas course updates, teacher emails, athletics reminders. Each
+          message is individually short, but in aggregate they create a
+          firehose that most working parents can't keep up with.
+        </p>
+        <p>
+          The tools we have to manage this — email inbox, ParentSquare,
+          Canvas — weren't designed to synthesize across sources. They store
+          information, but they don't surface it. A parent who wants to know
+          "what's happening this week" has to scroll through dozens of
+          messages and assemble the answer themselves.
+        </p>
+      </section>
 
-      <h3>Why this matters to me</h3>
-      <p>
-        [Continue here. Be personal. What did you see at KLS that made you
-        notice the problem? What was the moment you thought "I could build
-        this"?]
-      </p>
+      <section class="article-section reveal" style="--delay: 0.2s">
+        <h2>Why this matters to me</h2>
+        <p>
+          [Personal connection — what made YOU notice this problem at KLS.
+          What was the moment you thought "I could build this"?]
+        </p>
+        <p>
+          [What does it mean for you to make this for your school
+          specifically — for the people you see every day?]
+        </p>
+      </section>
+
+      <nav class="article-nav reveal">
+        <a href="index.html" class="article-nav-link">← Home</a>
+        <a href="process.html" class="article-nav-link article-nav-next">Process →</a>
+      </nav>
     </article>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Cornerstone Project · KLS Upper School · 2025–2026</p>
+    <div class="footer-inner">
+      <div>
+        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
+        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+        <a href="assets/proposal.pdf">Original proposal</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
