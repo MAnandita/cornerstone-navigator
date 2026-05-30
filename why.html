@@ -46,11 +46,72 @@
       <div class="callout reveal" style="--delay: 0.1s">
         <div class="callout-label">Driving question</div>
         <p class="callout-text serif">
-          Can a school-specific AI assistant make families' and students' lives meaningfully easier by turning scattered school communications into clear, on-demand answers?
+          How can an AI-powered information layer help schools turn scattered communications into clear, source-grounded answers for students, families, teachers, and staff?
         </p>
       </div>
 
-      <section class="article-section reveal" style="--delay: 0.15s">
+      <!-- Scattered Sources Illustration -->
+      <figure class="illustration reveal" style="--delay: 0.15s">
+        <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+          <defs>
+            <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#fcf9f4"/>
+            </linearGradient>
+            <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#c25e3a"/>
+              <stop offset="100%" stop-color="#d97849"/>
+            </linearGradient>
+          </defs>
+          <!-- Scattered source cards -->
+          <g class="float-1">
+            <rect x="40" y="50" width="140" height="80" rx="8" fill="url(#cardGrad)" stroke="#e8dcc6" stroke-width="1"/>
+            <text x="56" y="74" font-family="JetBrains Mono, monospace" font-size="10" fill="#9c907f" letter-spacing="0.6">EMAIL</text>
+            <rect x="56" y="86" width="100" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="56" y="96" width="80" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="56" y="106" width="90" height="3" rx="1.5" fill="#e8dcc6"/>
+          </g>
+          <g class="float-2">
+            <rect x="220" y="30" width="140" height="80" rx="8" fill="url(#cardGrad)" stroke="#e8dcc6" stroke-width="1"/>
+            <text x="236" y="54" font-family="JetBrains Mono, monospace" font-size="10" fill="#9c907f" letter-spacing="0.6">PARENTSQUARE</text>
+            <rect x="236" y="66" width="100" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="236" y="76" width="80" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="236" y="86" width="90" height="3" rx="1.5" fill="#e8dcc6"/>
+          </g>
+          <g class="float-3">
+            <rect x="400" y="60" width="140" height="80" rx="8" fill="url(#cardGrad)" stroke="#e8dcc6" stroke-width="1"/>
+            <text x="416" y="84" font-family="JetBrains Mono, monospace" font-size="10" fill="#9c907f" letter-spacing="0.6">CANVAS</text>
+            <rect x="416" y="96" width="100" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="416" y="106" width="80" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="416" y="116" width="90" height="3" rx="1.5" fill="#e8dcc6"/>
+          </g>
+          <g class="float-1">
+            <rect x="560" y="40" width="140" height="80" rx="8" fill="url(#cardGrad)" stroke="#e8dcc6" stroke-width="1"/>
+            <text x="576" y="64" font-family="JetBrains Mono, monospace" font-size="10" fill="#9c907f" letter-spacing="0.6">HANDBOOK</text>
+            <rect x="576" y="76" width="100" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="576" y="86" width="80" height="3" rx="1.5" fill="#e8dcc6"/>
+            <rect x="576" y="96" width="90" height="3" rx="1.5" fill="#e8dcc6"/>
+          </g>
+          <!-- Connecting lines to Navigator hub -->
+          <path d="M 180 130 Q 280 180 340 220" stroke="#c25e3a" stroke-width="1.2" fill="none" opacity="0.4" stroke-dasharray="3 3"/>
+          <path d="M 290 110 Q 320 170 350 215" stroke="#c25e3a" stroke-width="1.2" fill="none" opacity="0.4" stroke-dasharray="3 3"/>
+          <path d="M 470 140 Q 420 180 380 215" stroke="#c25e3a" stroke-width="1.2" fill="none" opacity="0.4" stroke-dasharray="3 3"/>
+          <path d="M 600 120 Q 500 180 400 220" stroke="#c25e3a" stroke-width="1.2" fill="none" opacity="0.4" stroke-dasharray="3 3"/>
+          <!-- Navigator hub -->
+          <circle cx="360" cy="265" r="55" fill="url(#navGrad)" opacity="0.95"/>
+          <circle cx="360" cy="265" r="55" fill="none" stroke="#c25e3a" stroke-width="0.6" opacity="0.3"/>
+          <circle cx="360" cy="265" r="70" fill="none" stroke="#c25e3a" stroke-width="0.6" opacity="0.2"/>
+          <circle cx="360" cy="265" r="85" fill="none" stroke="#c25e3a" stroke-width="0.6" opacity="0.1"/>
+          <g transform="translate(360, 265)">
+            <circle cx="0" cy="0" r="16" fill="none" stroke="white" stroke-width="1.4"/>
+            <path d="M0 -16 L3 0 L0 16 L-3 0 Z" fill="white" fill-opacity="0.3" stroke="white" stroke-width="1.2" stroke-linejoin="round"/>
+          </g>
+          <text x="360" y="345" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1a1410" font-weight="600">Navigator</text>
+        </svg>
+        <figcaption>School information today lives across many systems. Navigator brings it together into a single source of truth.</figcaption>
+      </figure>
+
+      <section class="article-section reveal" style="--delay: 0.2s">
         <p>
           School information at KLS is spread across many different systems. Announcements often come through ParentSquare and email, class information may live in Canvas, policies are stored in handbooks or documents, and other updates appear through separate tools. Each platform is useful on its own, but together they can make school information difficult to navigate. A student, parent, or teacher may know that an answer exists somewhere, but still have to search across old posts, messages, calendars, and documents to find it.
         </p>
@@ -102,7 +163,7 @@
           <div class="footer-col-label">Resources</div>
           <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
           <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
-          <a href="assets/proposal.pdf">Proposal (PDF)</a>
+          <a href="assets/cornerstone-proposal.pdf">Proposal (PDF)</a>
         </div>
       </div>
     </div>

@@ -26,8 +26,6 @@ if (typingEl) {
   function type() {
     if (i < answer.length) {
       const char = answer[i];
-
-      // Render [P1], [P2], etc. as inline pills
       if (char === '[') {
         const closing = answer.indexOf(']', i);
         if (closing > -1 && /^\[P\d+\]$/.test(answer.substring(i, closing + 1))) {
@@ -38,7 +36,6 @@ if (typingEl) {
           return;
         }
       }
-
       typingEl.innerHTML += char;
       i++;
       const speed = char === ' ' ? 16 : char === '.' ? 90 : char === ',' ? 60 : 14;

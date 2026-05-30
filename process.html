@@ -47,6 +47,67 @@
         <p>
           I began by researching how AI systems can answer questions using information that is specific to an organization. The main idea I studied was retrieval-augmented generation, or RAG. In a RAG system, the assistant first searches a collection of relevant documents and then generates an answer using the information it retrieved. This mattered for Navigator because school questions need to be grounded in the actual communications, policies, and updates that users have access to, rather than answered from broad general knowledge.
         </p>
+      </section>
+
+      <!-- Architecture Diagram -->
+      <figure class="illustration reveal" style="--delay: 0.12s">
+        <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" class="illustration-svg">
+          <defs>
+            <linearGradient id="archGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#fcf9f4"/>
+            </linearGradient>
+            <linearGradient id="archAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#c25e3a"/>
+              <stop offset="100%" stop-color="#d97849"/>
+            </linearGradient>
+          </defs>
+          <!-- Boxes -->
+          <g>
+            <rect x="40" y="100" width="120" height="80" rx="10" fill="url(#archGrad)" stroke="#e8dcc6" stroke-width="1.2"/>
+            <text x="100" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#c25e3a" font-weight="500" letter-spacing="0.6">01 · INGEST</text>
+            <text x="100" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1a1410" font-weight="600">Gmail API</text>
+          </g>
+          <g>
+            <rect x="200" y="100" width="120" height="80" rx="10" fill="url(#archGrad)" stroke="#e8dcc6" stroke-width="1.2"/>
+            <text x="260" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#c25e3a" font-weight="500" letter-spacing="0.6">02 · EMBED</text>
+            <text x="260" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1a1410" font-weight="600">Vector + Entities</text>
+          </g>
+          <g>
+            <rect x="360" y="100" width="120" height="80" rx="10" fill="url(#archGrad)" stroke="#e8dcc6" stroke-width="1.2"/>
+            <text x="420" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#c25e3a" font-weight="500" letter-spacing="0.6">03 · RETRIEVE</text>
+            <text x="420" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#1a1410" font-weight="600">4 Signal Ranking</text>
+          </g>
+          <g>
+            <rect x="520" y="100" width="160" height="80" rx="10" fill="url(#archAccent)"/>
+            <text x="600" y="135" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="white" font-weight="500" letter-spacing="0.6" opacity="0.85">04 · ANSWER</text>
+            <text x="600" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="white" font-weight="600">Cited Response</text>
+          </g>
+          <!-- Arrows -->
+          <g stroke="#c25e3a" stroke-width="1.5" fill="none" opacity="0.5">
+            <path d="M 165 140 L 195 140" marker-end="url(#arrow)"/>
+            <path d="M 325 140 L 355 140" marker-end="url(#arrow)"/>
+            <path d="M 485 140 L 515 140" marker-end="url(#arrow)"/>
+          </g>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 z" fill="#c25e3a"/>
+            </marker>
+          </defs>
+          <!-- Labels above -->
+          <text x="360" y="60" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="16" fill="#1a1410">The Navigator pipeline</text>
+          <text x="360" y="80" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#9c907f" letter-spacing="0.6">FROM INBOX TO ANSWER IN FOUR STAGES</text>
+          <!-- Bottom annotations -->
+          <text x="100" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b5f54">ParentSquare emails</text>
+          <text x="260" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b5f54">768-dim vectors</text>
+          <text x="420" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b5f54">semantic + keyword</text>
+          <text x="420" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b5f54">+ recency + tags</text>
+          <text x="600" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b5f54">Gemini + citations</text>
+        </svg>
+        <figcaption>Navigator's four-stage architecture: data flows from your inbox to a cited answer.</figcaption>
+      </figure>
+
+      <section class="article-section reveal" style="--delay: 0.15s">
         <p>
           After that, I built the core pipeline. Navigator ingests school-related information from ParentSquare communications received through email and processes it using the Gemini API. The system organizes posts, extracts useful details, and makes the content searchable so users can ask questions naturally. I also worked on extracting structured information such as events, deadlines, links, and key people, because those details could later support recent updates, suggested questions, and more precise answers. The product was built as a web application using Next.js and TypeScript, with a database to store users, posts, chats, projects, citations, source metadata, and settings.
         </p>
@@ -56,6 +117,27 @@
         <p>
           The backend was one of the most difficult parts of the project. Early versions had problems that only became obvious once the app became more realistic. Citations did not always persist after reloading old chats, suggested questions sometimes surfaced outdated events, chat titles were not always generated, and different parts of the app did not always use the same source logic. I worked through these issues by revising how messages, source metadata, user-specific information, and recent updates were stored and retrieved.
         </p>
+      </section>
+
+      <!-- Bug Card / Iteration Card -->
+      <div class="iteration-card reveal" style="--delay: 0.2s">
+        <div class="iteration-header">
+          <span class="iteration-badge">Real feedback from the pilot</span>
+        </div>
+        <div class="iteration-body">
+          <div class="iteration-row">
+            <div class="iteration-label">Before</div>
+            <div class="iteration-text">"What's happening this week?" returned events from a month ago.</div>
+          </div>
+          <div class="iteration-arrow">↓</div>
+          <div class="iteration-row iteration-after">
+            <div class="iteration-label">After</div>
+            <div class="iteration-text">Retrieval logic tightened to weight recent and upcoming posts more heavily.</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="article-section reveal" style="--delay: 0.25s">
         <p>
           I also incorporated feedback from Laura during testing. One important issue she noticed was recency: Navigator sometimes surfaced older events when users asked current questions like "What's happening this week?" Fixing this required adjusting the retrieval logic so recent and upcoming information was prioritized more carefully. Combined with the teacher and staff survey feedback, this helped me understand that useful AI depends on the whole system around the model: the sources, interface, retrieval logic, citations, feedback loops, and the trust users need before they rely on it.
         </p>
@@ -98,7 +180,7 @@
           <div class="footer-col-label">Resources</div>
           <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
           <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
-          <a href="assets/proposal.pdf">Proposal (PDF)</a>
+          <a href="assets/cornerstone-proposal.pdf">Proposal (PDF)</a>
         </div>
       </div>
     </div>
