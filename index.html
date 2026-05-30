@@ -3,156 +3,219 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navigator AI — A school-aware assistant grounded in your inbox</title>
+  <title>Navigator AI — A school assistant grounded in your inbox</title>
   <meta name="description" content="A private, source-grounded chatbot for the KLS community. Built as a Cornerstone Project by Anandita Mukherjee." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-bg"></div>
+  <div class="paper-noise"></div>
 
   <nav class="topnav">
     <div class="topnav-inner">
       <a href="index.html" class="brand">
-        <span class="brand-mark">◆</span>
-        <span class="brand-text">Navigator AI</span>
+        <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">Navigator</span>
       </a>
       <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html">Reflection</a>
-        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">
+          Open app
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
     </div>
   </nav>
 
   <main>
     <section class="hero">
-      <div class="hero-inner">
-        <div class="pill reveal">Cornerstone Project · KLS Upper School · 2025–2026</div>
-        <h1 class="reveal" style="--delay: 0.1s">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-dot"></span>
+          A Cornerstone Project · KLS Upper School · 2025–2026
+        </div>
+        <h1 class="hero-title reveal" style="--delay: 0.08s">
           A school assistant<br />
-          <span class="gradient-text">grounded in your inbox.</span>
+          <em class="serif">grounded in your inbox.</em>
         </h1>
-        <p class="hero-lede reveal" style="--delay: 0.2s">
-          Navigator AI turns the firehose of school communications into
-          clear, sourced answers. Ask anything. Get cited responses pulled
-          from your own posts.
+        <p class="hero-lede reveal" style="--delay: 0.16s">
+          Navigator AI turns the firehose of school communications into clear,
+          sourced answers. Ask anything. Get cited responses pulled from your
+          own posts — not the internet.
         </p>
-        <div class="hero-cta reveal" style="--delay: 0.3s">
+        <div class="hero-cta reveal" style="--delay: 0.24s">
           <a href="https://navigator-ai-production.up.railway.app/" class="btn-primary" target="_blank" rel="noopener">
             Try Navigator
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
           </a>
           <a href="why.html" class="btn-ghost">Read the story</a>
         </div>
       </div>
 
-      <div class="demo-window reveal" style="--delay: 0.4s">
-        <div class="demo-chrome">
-          <div class="demo-dots">
-            <span></span><span></span><span></span>
+      <div class="hero-visual reveal" style="--delay: 0.32s">
+        <div class="answer-card">
+          <div class="answer-card-bar">
+            <span class="bar-label"><span class="bar-dot"></span>Live demo</span>
+            <span class="bar-meta">navigator-ai · production</span>
           </div>
-          <div class="demo-url">navigator-ai-production.up.railway.app</div>
-        </div>
-        <div class="demo-body">
-          <div class="demo-question">What's happening at school this week?</div>
-          <div class="demo-answer">
-            <div class="demo-typing" id="typing"></div>
+          <div class="answer-card-body">
+            <div class="query-row">
+              <span class="query-label">You</span>
+              <div class="query-text">What's happening at school this week?</div>
+            </div>
+            <div class="response-row">
+              <span class="response-label">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2 L14 12 L12 22 L10 12 Z"/>
+                </svg>
+                Navigator
+              </span>
+              <div class="response-text" id="typing"></div>
+            </div>
+            <div class="sources-row" id="sourcesRow">
+              <div class="sources-label">Sources</div>
+              <div class="sources-list">
+                <div class="source-chip"><span class="source-num">P1</span>Senior Dinner Details</div>
+                <div class="source-chip"><span class="source-num">P2</span>Leadership Fair Sign-Ups</div>
+                <div class="source-chip"><span class="source-num">P3</span>Graduation Day Logistics</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="section-header reveal">
-        <div class="section-eyebrow">What it does</div>
-        <h2>Three surfaces, one source of truth.</h2>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <h3>Chat</h3>
-          <p>Ask anything about your school. Get cited answers in plain English, drawn only from your own posts.</p>
+    <section class="strip">
+      <div class="strip-inner">
+        <div class="strip-item">
+          <div class="strip-num">RAG</div>
+          <div class="strip-label">Retrieval-augmented<br/>generation pipeline</div>
         </div>
-
-        <div class="feature-card reveal" style="--delay: 0.05s">
-          <div class="feature-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-          </div>
-          <h3>Digest</h3>
-          <p>A structured view of upcoming events and deadlines for the next four weeks, automatically extracted from your inbox.</p>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-num">768</div>
+          <div class="strip-label">Embedding dimensions<br/>per post vector</div>
         </div>
-
-        <div class="feature-card reveal" style="--delay: 0.1s">
-          <div class="feature-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
-            </svg>
-          </div>
-          <h3>Posts</h3>
-          <p>A searchable archive of every ingested school message, scoped strictly to the user who received them.</p>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-num">0</div>
+          <div class="strip-label">Cross-user data leaks<br/>(audit-verified)</div>
+        </div>
+        <div class="strip-divider"></div>
+        <div class="strip-item">
+          <div class="strip-num">100%</div>
+          <div class="strip-label">Source-grounded<br/>answers</div>
         </div>
       </div>
     </section>
 
-    <section class="stats">
-      <div class="stats-inner">
-        <div class="stat reveal">
-          <div class="stat-num">RAG</div>
-          <div class="stat-label">Retrieval-augmented generation pipeline</div>
+    <section class="how">
+      <div class="how-header reveal">
+        <div class="section-eyebrow">How it works</div>
+        <h2 class="section-title">Built on a <em class="serif">real architecture,</em><br/>not just an API call.</h2>
+      </div>
+
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <div class="how-step-num">01</div>
+          <h3>Ingest</h3>
+          <p>Connect your Gmail. Navigator pulls in ParentSquare emails and stores them as structured posts with per-user visibility metadata.</p>
         </div>
-        <div class="stat reveal" style="--delay: 0.05s">
-          <div class="stat-num">~768</div>
-          <div class="stat-label">Embedding dimensions per post vector</div>
+        <div class="how-connector"></div>
+        <div class="how-step reveal" style="--delay: 0.06s">
+          <div class="how-step-num">02</div>
+          <h3>Embed</h3>
+          <p>Each post is turned into a 768-dimensional vector that captures its meaning, plus structured entities — events, deadlines, people, programs.</p>
         </div>
-        <div class="stat reveal" style="--delay: 0.1s">
-          <div class="stat-num">0</div>
-          <div class="stat-label">Cross-user data leaks (verified)</div>
+        <div class="how-connector"></div>
+        <div class="how-step reveal" style="--delay: 0.12s">
+          <div class="how-step-num">03</div>
+          <h3>Retrieve</h3>
+          <p>When you ask a question, four ranking signals — semantic similarity, keyword match, recency, and tags — surface the most relevant posts.</p>
+        </div>
+        <div class="how-connector"></div>
+        <div class="how-step reveal" style="--delay: 0.18s">
+          <div class="how-step-num">04</div>
+          <h3>Answer</h3>
+          <p>A language model reads the retrieved posts and writes a cited answer. Every claim links to the source. Nothing is invented.</p>
         </div>
       </div>
     </section>
 
-    <section class="pages-nav">
-      <div class="section-header reveal">
+    <section class="quote-section">
+      <div class="quote-inner">
+        <div class="quote-mark serif">"</div>
+        <blockquote class="reveal">
+          The setup was fairly easy. I think anyone could do it.
+        </blockquote>
+        <div class="quote-attr reveal" style="--delay: 0.1s">
+          — Laura Khanna, Upper School Director · KLS pilot
+        </div>
+      </div>
+    </section>
+
+    <section class="pages-section">
+      <div class="pages-header reveal">
         <div class="section-eyebrow">Project documentation</div>
-        <h2>Explore the project.</h2>
+        <h2 class="section-title">Read the <em class="serif">full story.</em></h2>
       </div>
 
       <div class="page-grid">
         <a href="why.html" class="page-card reveal">
-          <div class="page-card-num">01</div>
-          <h3>Why</h3>
-          <p>The problem I wanted to solve and what makes it meaningful.</p>
-          <div class="page-card-arrow">→</div>
+          <div class="page-card-top">
+            <div class="page-card-num">01</div>
+            <h3>Why</h3>
+          </div>
+          <p>The problem I wanted to solve and what makes it meaningful to me.</p>
+          <div class="page-card-bottom">
+            <span class="page-card-meta">300–400 words</span>
+            <span class="page-card-arrow">→</span>
+          </div>
         </a>
+
         <a href="process.html" class="page-card reveal" style="--delay: 0.05s">
-          <div class="page-card-num">02</div>
-          <h3>Process</h3>
-          <p>How I built Navigator from idea to deployed product.</p>
-          <div class="page-card-arrow">→</div>
+          <div class="page-card-top">
+            <div class="page-card-num">02</div>
+            <h3>Process</h3>
+          </div>
+          <p>How I built Navigator from research and design to a deployed pilot.</p>
+          <div class="page-card-bottom">
+            <span class="page-card-meta">400–500 words</span>
+            <span class="page-card-arrow">→</span>
+          </div>
         </a>
+
         <a href="product.html" class="page-card reveal" style="--delay: 0.1s">
-          <div class="page-card-num">03</div>
-          <h3>Product</h3>
-          <p>What Navigator does and the technical architecture behind it.</p>
-          <div class="page-card-arrow">→</div>
+          <div class="page-card-top">
+            <div class="page-card-num">03</div>
+            <h3>Product</h3>
+          </div>
+          <p>What Navigator does, what users see, and the architecture behind it.</p>
+          <div class="page-card-bottom">
+            <span class="page-card-meta">300–400 words</span>
+            <span class="page-card-arrow">→</span>
+          </div>
         </a>
+
         <a href="reflection.html" class="page-card reveal" style="--delay: 0.15s">
-          <div class="page-card-num">04</div>
-          <h3>Reflection</h3>
-          <p>Video reflection on what I learned and what comes next.</p>
-          <div class="page-card-arrow">→</div>
+          <div class="page-card-top">
+            <div class="page-card-num">04</div>
+            <h3>Reflection</h3>
+          </div>
+          <p>A video reflection on what I learned and where Navigator goes next.</p>
+          <div class="page-card-bottom">
+            <span class="page-card-meta">10–15 min video</span>
+            <span class="page-card-arrow">→</span>
+          </div>
         </a>
       </div>
     </section>
@@ -160,14 +223,30 @@
 
   <footer>
     <div class="footer-inner">
-      <div>
-        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
-        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-text">Navigator</span>
+        </a>
+        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School · 2025–2026.</p>
       </div>
       <div class="footer-links">
-        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
-        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
-        <a href="assets/proposal.pdf">Original proposal</a>
+        <div class="footer-col">
+          <div class="footer-col-label">Project</div>
+          <a href="why.html">Why</a>
+          <a href="process.html">Process</a>
+          <a href="product.html">Product</a>
+          <a href="reflection.html">Reflection</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Resources</div>
+          <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+          <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+          <a href="assets/proposal.pdf">Proposal (PDF)</a>
+        </div>
       </div>
     </div>
   </footer>

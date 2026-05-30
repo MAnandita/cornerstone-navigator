@@ -6,24 +6,30 @@
   <title>Reflection · Navigator AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-bg"></div>
+  <div class="paper-noise"></div>
 
   <nav class="topnav">
     <div class="topnav-inner">
       <a href="index.html" class="brand">
-        <span class="brand-mark">◆</span>
-        <span class="brand-text">Navigator AI</span>
+        <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">Navigator</span>
       </a>
       <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html" class="active">Reflection</a>
-        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">
+          Open app
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
     </div>
   </nav>
@@ -32,7 +38,7 @@
     <article class="article">
       <header class="article-header reveal">
         <div class="article-eyebrow">04 · Reflection</div>
-        <h1>Looking back, looking forward.</h1>
+        <h1 class="article-title">Looking back,<br/><em class="serif">looking forward.</em></h1>
         <p class="article-lede">A 10–15 minute video reflection on the Navigator AI journey.</p>
       </header>
 
@@ -53,28 +59,50 @@
           <li>My methodology and the technical journey</li>
           <li>The product itself and what I would improve with more time</li>
           <li>What I learned about engineering, AI, and shipping real software</li>
-          <li>How Navigator can contribute to the KLS community and beyond</li>
+          <li>How Navigator can contribute to KLS and beyond</li>
           <li>Future plans for the project</li>
         </ul>
       </section>
 
       <nav class="article-nav reveal">
-        <a href="product.html" class="article-nav-link">← Product</a>
-        <a href="index.html" class="article-nav-link article-nav-next">Home →</a>
+        <a href="product.html" class="article-nav-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+          Product
+        </a>
+        <a href="index.html" class="article-nav-link article-nav-next">
+          Home
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+        </a>
       </nav>
     </article>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <div>
-        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
-        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-text">Navigator</span>
+        </a>
+        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School · 2025–2026.</p>
       </div>
       <div class="footer-links">
-        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
-        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
-        <a href="assets/proposal.pdf">Original proposal</a>
+        <div class="footer-col">
+          <div class="footer-col-label">Project</div>
+          <a href="why.html">Why</a>
+          <a href="process.html">Process</a>
+          <a href="product.html">Product</a>
+          <a href="reflection.html">Reflection</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Resources</div>
+          <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+          <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+          <a href="assets/proposal.pdf">Proposal (PDF)</a>
+        </div>
       </div>
     </div>
   </footer>

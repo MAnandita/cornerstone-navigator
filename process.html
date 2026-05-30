@@ -6,24 +6,30 @@
   <title>Process · Navigator AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="grid-bg"></div>
+  <div class="paper-noise"></div>
 
   <nav class="topnav">
     <div class="topnav-inner">
       <a href="index.html" class="brand">
-        <span class="brand-mark">◆</span>
-        <span class="brand-text">Navigator AI</span>
+        <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">Navigator</span>
       </a>
       <div class="topnav-links">
         <a href="why.html">Why</a>
         <a href="process.html" class="active">Process</a>
         <a href="product.html">Product</a>
         <a href="reflection.html">Reflection</a>
-        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">Try it →</a>
+        <a href="https://navigator-ai-production.up.railway.app/" class="topnav-cta" target="_blank" rel="noopener">
+          Open app
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
     </div>
   </nav>
@@ -32,14 +38,14 @@
     <article class="article">
       <header class="article-header reveal">
         <div class="article-eyebrow">02 · Process</div>
-        <h1>From a question to a working product.</h1>
-        <p class="article-lede">How I built Navigator AI over a series of late nights and architectural turns.</p>
+        <h1 class="article-title">From a question<br/>to a <em class="serif">working product.</em></h1>
+        <p class="article-lede">How I built Navigator AI through research, iteration, and a lot of debugging.</p>
       </header>
 
       <section class="article-section reveal" style="--delay: 0.1s">
-        <h2>Phase 01 · Research and design</h2>
+        <h2><span class="phase-tag">Phase 01</span>Research and design</h2>
         <p>
-          [WRITE 400-500 WORDS TOTAL ACROSS THIS PAGE]
+          [WRITE 400–500 WORDS TOTAL ACROSS THIS PAGE]
         </p>
         <p>
           The first weeks were entirely about reading. I dug into how
@@ -52,17 +58,22 @@
       </section>
 
       <section class="article-section reveal" style="--delay: 0.15s">
-        <h2>Phase 02 · Building the core pipeline</h2>
+        <h2><span class="phase-tag">Phase 02</span>Building the core pipeline</h2>
         <p>
-          Navigator runs on four parallel pipelines: ingestion, embedding
-          and entity extraction, retrieval and generation, and a maintenance
-          layer that keeps data quality high over time.
+          Navigator runs on four parallel pipelines: ingestion, embedding and
+          entity extraction, retrieval and generation, and a background
+          maintenance layer that keeps data quality high over time.
         </p>
         <div class="code-block">
-          <div class="code-header">Architecture</div>
+          <div class="code-header">
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-dot"></span>
+            <span class="code-title">architecture</span>
+          </div>
           <pre><code>Gmail API → Posts table → Embeddings + Entity Extraction
                                         ↓
-                              Retrieval (4 signals)
+                              Retrieval (four signals)
                                         ↓
                               Generation (Gemini)
                                         ↓
@@ -71,51 +82,74 @@
       </section>
 
       <section class="article-section reveal" style="--delay: 0.2s">
-        <h2>Phase 03 · Privacy and isolation</h2>
+        <h2><span class="phase-tag">Phase 03</span>Privacy and isolation</h2>
         <p>
           The hardest engineering problem wasn't the AI. It was making sure
           one user's data could never leak into another's experience. Every
           read path — chat retrieval, the posts page, the digest, the
           suggested questions, even the post count shown in the UI — joins
           through a per-user visibility table. This is enforced at the
-          database level, not the UI level.
+          database level, not the UI.
         </p>
       </section>
 
       <section class="article-section reveal" style="--delay: 0.25s">
-        <h2>Phase 04 · Pilot and iteration</h2>
+        <h2><span class="phase-tag">Phase 04</span>Pilot and iteration</h2>
         <p>
-          [Talk about Laura, the feedback you got, the bugs you found
-          through real use, the iteration loop.]
+          [Talk about Laura Khanna piloting the app, the real bugs surfaced
+          by real use, and how the iteration loop unfolded.]
         </p>
       </section>
 
       <section class="article-section reveal" style="--delay: 0.3s">
         <h2>Challenges</h2>
         <p>
-          [Two or three specific technical challenges. The recency bias
-          issue. Hallucinated future dates on old posts. The Patch M
-          ordering bug. Be honest about what didn't work the first time.]
+          [Pick two or three specific technical or design challenges. The
+          recency-bias issue. Hallucinated future dates on old posts. The
+          ordering bug in the upcoming-events injection. Be honest about
+          what didn't work the first time.]
         </p>
       </section>
 
       <nav class="article-nav reveal">
-        <a href="why.html" class="article-nav-link">← Why</a>
-        <a href="product.html" class="article-nav-link article-nav-next">Product →</a>
+        <a href="why.html" class="article-nav-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+          Why
+        </a>
+        <a href="product.html" class="article-nav-link article-nav-next">
+          Product
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+        </a>
       </nav>
     </article>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <div>
-        <div class="brand"><span class="brand-mark">◆</span><span class="brand-text">Navigator AI</span></div>
-        <p class="footer-tag">A Cornerstone Project · 2025–2026</p>
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M12 2 L14.5 12 L12 22 L9.5 12 Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-text">Navigator</span>
+        </a>
+        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School · 2025–2026.</p>
       </div>
       <div class="footer-links">
-        <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
-        <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
-        <a href="assets/proposal.pdf">Original proposal</a>
+        <div class="footer-col">
+          <div class="footer-col-label">Project</div>
+          <a href="why.html">Why</a>
+          <a href="process.html">Process</a>
+          <a href="product.html">Product</a>
+          <a href="reflection.html">Reflection</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Resources</div>
+          <a href="https://navigator-ai-production.up.railway.app/" target="_blank" rel="noopener">Live app</a>
+          <a href="https://github.com/MAnandita/navigator-ai" target="_blank" rel="noopener">Source code</a>
+          <a href="assets/proposal.pdf">Proposal (PDF)</a>
+        </div>
       </div>
     </div>
   </footer>
