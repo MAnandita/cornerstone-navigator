@@ -41,14 +41,13 @@ if (typingEl) {
 
       typingEl.innerHTML += char;
       i++;
-      const speed = char === ' ' ? 18 : char === '.' ? 90 : char === ',' ? 60 : 16;
-      setTimeout(type, speed + Math.random() * 14);
+      const speed = char === ' ' ? 16 : char === '.' ? 90 : char === ',' ? 60 : 14;
+      setTimeout(type, speed + Math.random() * 12);
     } else {
-      // Done typing — hide cursor and reveal sources
       typingEl.classList.add('done');
       setTimeout(() => {
         if (sourcesRow) sourcesRow.classList.add('visible');
-      }, 200);
+      }, 250);
     }
   }
 

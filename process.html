@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="paper-noise"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
 
   <nav class="topnav">
     <div class="topnav-inner">
@@ -37,77 +38,26 @@
   <main class="article-main">
     <article class="article">
       <header class="article-header reveal">
-        <div class="article-eyebrow">02 · Process</div>
+        <div class="article-eyebrow">02 &middot; Process</div>
         <h1 class="article-title">From a question<br/>to a <em class="serif">working product.</em></h1>
         <p class="article-lede">How I built Navigator AI through research, iteration, and a lot of debugging.</p>
       </header>
 
       <section class="article-section reveal" style="--delay: 0.1s">
-        <h2><span class="phase-tag">Phase 01</span>Research and design</h2>
         <p>
-          [WRITE 400–500 WORDS TOTAL ACROSS THIS PAGE]
+          I began by researching how AI systems can answer questions using information that is specific to an organization. The main idea I studied was retrieval-augmented generation, or RAG. In a RAG system, the assistant first searches a collection of relevant documents and then generates an answer using the information it retrieved. This mattered for Navigator because school questions need to be grounded in the actual communications, policies, and updates that users have access to, rather than answered from broad general knowledge.
         </p>
         <p>
-          The first weeks were entirely about reading. I dug into how
-          retrieval-augmented generation works, why it matters, and how
-          modern AI applications combine semantic search with structured
-          data. I learned about embeddings, cosine similarity, and the
-          tradeoffs between dense vector search and traditional keyword
-          search.
+          After that, I built the core pipeline. Navigator ingests school-related information from ParentSquare communications received through email and processes it using the Gemini API. The system organizes posts, extracts useful details, and makes the content searchable so users can ask questions naturally. I also worked on extracting structured information such as events, deadlines, links, and key people, because those details could later support recent updates, suggested questions, and more precise answers. The product was built as a web application using Next.js and TypeScript, with a database to store users, posts, chats, projects, citations, source metadata, and settings.
         </p>
-      </section>
-
-      <section class="article-section reveal" style="--delay: 0.15s">
-        <h2><span class="phase-tag">Phase 02</span>Building the core pipeline</h2>
         <p>
-          Navigator runs on four parallel pipelines: ingestion, embedding and
-          entity extraction, retrieval and generation, and a background
-          maintenance layer that keeps data quality high over time.
+          One of my biggest design inspirations was NotebookLM. I liked how it makes sources part of the reading experience rather than something separate from the answer. I wanted Navigator to have a similar source-grounded structure: answers include citation markers in the response, and when users click a citation, the original source can open in a sidebar. This made citations a central part of how Navigator builds trust.
         </p>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-dot"></span>
-            <span class="code-dot"></span>
-            <span class="code-dot"></span>
-            <span class="code-title">architecture</span>
-          </div>
-          <pre><code>Gmail API → Posts table → Embeddings + Entity Extraction
-                                        ↓
-                              Retrieval (four signals)
-                                        ↓
-                              Generation (Gemini)
-                                        ↓
-                              Cited answer</code></pre>
-        </div>
-      </section>
-
-      <section class="article-section reveal" style="--delay: 0.2s">
-        <h2><span class="phase-tag">Phase 03</span>Privacy and isolation</h2>
         <p>
-          The hardest engineering problem wasn't the AI. It was making sure
-          one user's data could never leak into another's experience. Every
-          read path — chat retrieval, the posts page, the digest, the
-          suggested questions, even the post count shown in the UI — joins
-          through a per-user visibility table. This is enforced at the
-          database level, not the UI.
+          The backend was one of the most difficult parts of the project. Early versions had problems that only became obvious once the app became more realistic. Citations did not always persist after reloading old chats, suggested questions sometimes surfaced outdated events, chat titles were not always generated, and different parts of the app did not always use the same source logic. I worked through these issues by revising how messages, source metadata, user-specific information, and recent updates were stored and retrieved.
         </p>
-      </section>
-
-      <section class="article-section reveal" style="--delay: 0.25s">
-        <h2><span class="phase-tag">Phase 04</span>Pilot and iteration</h2>
         <p>
-          [Talk about Laura Khanna piloting the app, the real bugs surfaced
-          by real use, and how the iteration loop unfolded.]
-        </p>
-      </section>
-
-      <section class="article-section reveal" style="--delay: 0.3s">
-        <h2>Challenges</h2>
-        <p>
-          [Pick two or three specific technical or design challenges. The
-          recency-bias issue. Hallucinated future dates on old posts. The
-          ordering bug in the upcoming-events injection. Be honest about
-          what didn't work the first time.]
+          I also incorporated feedback from Laura during testing. One important issue she noticed was recency: Navigator sometimes surfaced older events when users asked current questions like "What's happening this week?" Fixing this required adjusting the retrieval logic so recent and upcoming information was prioritized more carefully. Combined with the teacher and staff survey feedback, this helped me understand that useful AI depends on the whole system around the model: the sources, interface, retrieval logic, citations, feedback loops, and the trust users need before they rely on it.
         </p>
       </section>
 
@@ -134,7 +84,7 @@
           </svg>
           <span class="brand-text">Navigator</span>
         </a>
-        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School · 2025–2026.</p>
+        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School &middot; 2025&ndash;2026.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">

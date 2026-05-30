@@ -12,6 +12,8 @@
 </head>
 <body>
   <div class="paper-noise"></div>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
 
   <nav class="topnav">
     <div class="topnav-inner">
@@ -49,7 +51,7 @@
         <p class="hero-lede reveal" style="--delay: 0.16s">
           Navigator AI turns the firehose of school communications into clear,
           sourced answers. Ask anything. Get cited responses pulled from your
-          own posts — not the internet.
+          own posts &mdash; not the internet.
         </p>
         <div class="hero-cta reveal" style="--delay: 0.24s">
           <a href="https://navigator-ai-production.up.railway.app/" class="btn-primary" target="_blank" rel="noopener">
@@ -60,33 +62,44 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal" style="--delay: 0.32s">
-        <div class="answer-card">
-          <div class="answer-card-bar">
-            <span class="bar-label"><span class="bar-dot"></span>Live demo</span>
-            <span class="bar-meta">navigator-ai · production</span>
-          </div>
-          <div class="answer-card-body">
-            <div class="query-row">
-              <span class="query-label">You</span>
-              <div class="query-text">What's happening at school this week?</div>
-            </div>
-            <div class="response-row">
-              <span class="response-label">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 2 L14 12 L12 22 L10 12 Z"/>
-                </svg>
-                Navigator
+      <div class="hero-visual reveal" style="--delay: 0.3s">
+        <div class="answer-card-wrap">
+          <div class="answer-card">
+            <div class="answer-card-bar">
+              <span class="bar-label"><span class="bar-dot"></span>Live</span>
+              <span class="bar-meta">navigator-ai · production</span>
+              <span class="bar-controls">
+                <span class="bar-control"></span>
+                <span class="bar-control"></span>
+                <span class="bar-control"></span>
               </span>
-              <div class="response-text" id="typing"></div>
             </div>
-            <div class="sources-row" id="sourcesRow">
-              <div class="sources-label">Sources</div>
-              <div class="sources-list">
-                <div class="source-chip"><span class="source-num">P1</span>Senior Dinner Details</div>
-                <div class="source-chip"><span class="source-num">P2</span>Leadership Fair Sign-Ups</div>
-                <div class="source-chip"><span class="source-num">P3</span>Graduation Day Logistics</div>
+            <div class="answer-card-body">
+              <div class="query-row">
+                <div class="row-avatar query-avatar">A</div>
+                <div class="query-text">What's happening at school this week?</div>
+              </div>
+              <div class="response-row">
+                <div class="row-avatar response-avatar">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2 L14 12 L12 22 L10 12 Z"/>
+                  </svg>
+                </div>
+                <div class="response-content">
+                  <div class="response-text" id="typing"></div>
+                  <div class="sources-row" id="sourcesRow">
+                    <div class="sources-label">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                      3 sources
+                    </div>
+                    <div class="sources-list">
+                      <div class="source-chip"><span class="source-num">P1</span>Senior Dinner Details</div>
+                      <div class="source-chip"><span class="source-num">P2</span>Leadership Fair Sign-Ups</div>
+                      <div class="source-chip"><span class="source-num">P3</span>Graduation Day Logistics</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,23 +109,23 @@
 
     <section class="strip">
       <div class="strip-inner">
-        <div class="strip-item">
-          <div class="strip-num">RAG</div>
+        <div class="strip-item reveal">
+          <div class="strip-num serif">RAG</div>
           <div class="strip-label">Retrieval-augmented<br/>generation pipeline</div>
         </div>
         <div class="strip-divider"></div>
-        <div class="strip-item">
-          <div class="strip-num">768</div>
+        <div class="strip-item reveal" style="--delay: 0.05s">
+          <div class="strip-num serif">768</div>
           <div class="strip-label">Embedding dimensions<br/>per post vector</div>
         </div>
         <div class="strip-divider"></div>
-        <div class="strip-item">
-          <div class="strip-num">0</div>
+        <div class="strip-item reveal" style="--delay: 0.1s">
+          <div class="strip-num serif">0</div>
           <div class="strip-label">Cross-user data leaks<br/>(audit-verified)</div>
         </div>
         <div class="strip-divider"></div>
-        <div class="strip-item">
-          <div class="strip-num">100%</div>
+        <div class="strip-item reveal" style="--delay: 0.15s">
+          <div class="strip-num serif">100%</div>
           <div class="strip-label">Source-grounded<br/>answers</div>
         </div>
       </div>
@@ -134,19 +147,19 @@
         <div class="how-step reveal" style="--delay: 0.06s">
           <div class="how-step-num">02</div>
           <h3>Embed</h3>
-          <p>Each post is turned into a 768-dimensional vector that captures its meaning, plus structured entities — events, deadlines, people, programs.</p>
+          <p>Each post is turned into a 768-dimensional vector that captures its meaning, plus structured entities &mdash; events, deadlines, people, programs.</p>
         </div>
         <div class="how-connector"></div>
         <div class="how-step reveal" style="--delay: 0.12s">
           <div class="how-step-num">03</div>
           <h3>Retrieve</h3>
-          <p>When you ask a question, four ranking signals — semantic similarity, keyword match, recency, and tags — surface the most relevant posts.</p>
+          <p>When you ask a question, four ranking signals &mdash; semantic similarity, keyword match, recency, and tags &mdash; surface the most relevant posts.</p>
         </div>
         <div class="how-connector"></div>
         <div class="how-step reveal" style="--delay: 0.18s">
           <div class="how-step-num">04</div>
           <h3>Answer</h3>
-          <p>A language model reads the retrieved posts and writes a cited answer. Every claim links to the source. Nothing is invented.</p>
+          <p>A language model reads the retrieved posts and writes a cited answer. Every claim links to its source. Nothing is invented.</p>
         </div>
       </div>
     </section>
@@ -158,7 +171,7 @@
           The setup was fairly easy. I think anyone could do it.
         </blockquote>
         <div class="quote-attr reveal" style="--delay: 0.1s">
-          — Laura Khanna, Upper School Director · KLS pilot
+          &mdash; Laura Khanna, Upper School Director &middot; KLS pilot
         </div>
       </div>
     </section>
@@ -177,8 +190,8 @@
           </div>
           <p>The problem I wanted to solve and what makes it meaningful to me.</p>
           <div class="page-card-bottom">
-            <span class="page-card-meta">300–400 words</span>
-            <span class="page-card-arrow">→</span>
+            <span class="page-card-meta">300&ndash;400 words</span>
+            <span class="page-card-arrow">&rarr;</span>
           </div>
         </a>
 
@@ -189,8 +202,8 @@
           </div>
           <p>How I built Navigator from research and design to a deployed pilot.</p>
           <div class="page-card-bottom">
-            <span class="page-card-meta">400–500 words</span>
-            <span class="page-card-arrow">→</span>
+            <span class="page-card-meta">400&ndash;500 words</span>
+            <span class="page-card-arrow">&rarr;</span>
           </div>
         </a>
 
@@ -201,8 +214,8 @@
           </div>
           <p>What Navigator does, what users see, and the architecture behind it.</p>
           <div class="page-card-bottom">
-            <span class="page-card-meta">300–400 words</span>
-            <span class="page-card-arrow">→</span>
+            <span class="page-card-meta">300&ndash;400 words</span>
+            <span class="page-card-arrow">&rarr;</span>
           </div>
         </a>
 
@@ -213,8 +226,8 @@
           </div>
           <p>A video reflection on what I learned and where Navigator goes next.</p>
           <div class="page-card-bottom">
-            <span class="page-card-meta">10–15 min video</span>
-            <span class="page-card-arrow">→</span>
+            <span class="page-card-meta">10&ndash;15 min video</span>
+            <span class="page-card-arrow">&rarr;</span>
           </div>
         </a>
       </div>
@@ -231,7 +244,7 @@
           </svg>
           <span class="brand-text">Navigator</span>
         </a>
-        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School · 2025–2026.</p>
+        <p class="footer-tag">A Cornerstone Project by Anandita Mukherjee.<br/>KLS Upper School &middot; 2025&ndash;2026.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
