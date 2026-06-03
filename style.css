@@ -165,7 +165,7 @@ main { position: relative; z-index: 1; }
   font-weight: 500; font-size: 1em; letter-spacing: -0.04em;
   background: linear-gradient(135deg, var(--sienna) 0%, var(--sienna-warm) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  display: inline-block; padding: 0 0.08em; margin: 0 -0.08em;
+  padding-right: 0.2em;
 }
 
 .hero-lede {
@@ -377,7 +377,7 @@ main { position: relative; z-index: 1; }
   background: linear-gradient(135deg, var(--sienna) 0%, var(--sienna-warm) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   font-weight: 500;
-  display: inline-block; padding: 0 0.08em; margin: 0 -0.08em;
+  padding-right: 0.2em;
 }
 
 .how-grid { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: stretch; }
@@ -542,7 +542,7 @@ main { position: relative; z-index: 1; }
   background: linear-gradient(135deg, var(--sienna) 0%, var(--sienna-warm) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   font-weight: 500;
-  display: inline-block; padding: 0 0.08em; margin: 0 -0.08em;
+  padding-right: 0.2em;
 }
 
 .article-lede {
