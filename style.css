@@ -162,7 +162,7 @@ main { position: relative; z-index: 1; }
 }
 
 .hero-title .serif {
-  font-weight: 500; font-size: 1em; letter-spacing: -0.04em;
+  font-weight: 500; font-size: 1em; letter-spacing: -0.01em;
   background: linear-gradient(135deg, var(--sienna) 0%, var(--sienna-warm) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   padding-right: 0.2em;
